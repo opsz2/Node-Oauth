@@ -22,7 +22,7 @@ app.get("/", authenticateRequest, function(req, res) {
 
 mongoose
   .connect(
-    "mongodb+srv://admin:admin@cluster0-rfjnn.gcp.mongodb.net/oauth?retryWrites=true&w=majority",
+    process.env.DATABASE,
     {
       useCreateIndex: true,
       useNewUrlParser: true
@@ -31,6 +31,6 @@ mongoose
   .then(result => {
     // console.log(result)
     console.log("connected");
-    app.listen(3000);
+    app.listen(process.env.PORT || 3000);
   })
   .catch(err => console.log("error", err));

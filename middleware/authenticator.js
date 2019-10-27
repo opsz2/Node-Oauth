@@ -2,7 +2,7 @@ const oauthserver = require("oauth2-server"),
   Request = oauthserver.Request,
   Response = oauthserver.Response,
   initializeOauth = require("./authServer"),
-  LOG = "AUTENTICATOE MIDDLEWARE";
+  LOG = "AUTENTICATE MIDDLEWARE";
 
 function authenticateRequest(req, res, next) {
   var request = new Request(req);
